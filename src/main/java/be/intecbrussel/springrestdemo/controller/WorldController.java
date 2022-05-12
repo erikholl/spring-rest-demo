@@ -3,10 +3,7 @@ package be.intecbrussel.springrestdemo.controller;
 import be.intecbrussel.springrestdemo.model.Employee;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 
@@ -52,4 +49,16 @@ public class WorldController {
 //        return "Hello Mars!";
     }
 
+//    @RequestMapping(value = "/mars", method = RequestMethod.POST) // the
+//    long way
+    @PostMapping("/mars")
+    public ResponseEntity postExample() {
+        return ResponseEntity.ok("mars in the post");
+    }
+
+
+    @PutMapping("/mars")
+    public ResponseEntity putExample() {
+        return ResponseEntity.ok("mars in the put");
+    }
 }
